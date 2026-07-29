@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CF Tag Predictor</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>CF Tag Predictor</h1>
+    <p class="subtitle">Paste a Codeforces problem statement to predict its tags</p>
+
+    <textarea id="statement" placeholder="Paste problem statement here..."></textarea>
+    <button id="btn" onclick="predict()">Predict Tags</button>
+
+    <div id="error" class="error"></div>
+
+    <div class="results" id="results" style="display:none">
+        <h2>Predicted Tags</h2>
+        <div class="tags" id="tags"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h1 style="font-size: 1.5rem;">CF Rating Predictor</h1>
+    <p class="subtitle">Enter a contest ID and problem index to predict its rating</p>
+
+    <div class="rating-inputs">
+        <input id="contestId" type="number" placeholder="Contest ID (e.g. 1234)">
+        <input id="problemIndex" type="text" placeholder="Index (e.g. A)">
+    </div>
+    <button id="ratingBtn" onclick="predictRating()">Predict Rating</button>
+
+    <div id="ratingError" class="error"></div>
+
+    <div class="results" id="ratingResults" style="display:none">
+        <h2>Predicted Rating</h2>
+        <div class="rating-card">
+            <div class="rating-value" id="ratingValue">-</div>
+            <div class="rating-meta">
+                Solved by <span id="solvedCount">-</span> users<br>
+                Raw prediction: <span id="rawRating">-</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
