@@ -1,5 +1,9 @@
 fastapi
 uvicorn
+python-dotenv
+requests
+jinja2
+pydantic
+sqlalchemy
 scikit-learn
 numpy
-jinja2
