@@ -42,6 +42,10 @@ Predict a difficulty rating for a given problem.
 ```
 Looks up the problem's solve count and tags (from the Codeforces API); if no tags are available, falls back to predicting tags from the stored problem statement before generating a rating estimate. Response includes the raw and rounded predicted rating, plus which tags were used and where they came from (`codeforces` vs `predicted_from_statement`).
 
+## Limitations
+
+- The scraper extracts problem text (statement, input/output format, examples) but does not download embedded images or PDF attachments — problems that rely heavily on visual diagrams may have incomplete statements available for tag prediction.
+
 ## Local Setup
 
 ```bash
