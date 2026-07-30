@@ -7,3 +7,4 @@ pydantic
 sqlalchemy
 scikit-learn
 numpy
+psycopg2-binary
