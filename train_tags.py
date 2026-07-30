@@ -10,6 +10,62 @@ from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import f1_score
 
+"""
+F1 Score (micro): 0.297
+F1 Score (macro): 0.176
+38
+
+
+--- Results ---
+MAE: 508.9 rating points
+Exact match (rounded to nearest 100): 118/2158 (5.5%)
+Within ±100 points: 228/2158 (10.6%)
+Coefficient (solved_count): -0.015255
+Intercept: 2020.3
+
+Loaded 10788 rated problems
+Fetching problem statistics from Codeforces API...
+Matched 10788 problems with solve counts (skipped 0 with no match)
+Encoded 38 distinct tags
+
+--- Results ---
+MAE: 212.8 rating points
+Exact match (rounded to nearest 100): 321/2158 (14.9%)
+Within ±100 points: 626/2158 (29.0%)
+
+Top tags associated with HIGHER rating:
+  fft: +243.5
+  data structures: +201.0
+  string suffix structures: +198.4
+  interactive: +192.4
+  flows: +161.4
+
+Top tags associated with LOWER rating:
+  implementation: -93.5
+  expression parsing: -110.1
+  communication: -290.0
+  log_solved_count: -385.9
+  *special: -739.9
+
+Saving model...
+
+Loading rated problems from database...
+Loaded 10788 rated problems
+Fetching problem statistics from Codeforces API...
+Matched 10788 problems with solve counts (skipped 0 with no match)
+
+--- Results ---
+MAE: 267.3 rating points
+Exact match (rounded to nearest 100): 243/2158 (11.3%)
+Within ±100 points: 500/2158 (23.2%)
+
+Coefficient (log_solved_count): -403.6
+Intercept: 5186.5
+
+Saving model...
+
+"""
+
 load_dotenv()
 
 engine = create_engine(os.getenv("DATABASE_URL"), connect_args={"sslmode": "require"})

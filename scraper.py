@@ -63,6 +63,9 @@ def save_problem(problem: dict):
     else:
         print("Already exists:", problem["contest_id"], problem["problem_index"])
 
+def is_special_contest(problems_for_contest):
+    return any("*special" in p.get("tags", []) for p in problems_for_contest)
+
 def get_all_problems():
     print("Fetching problem list from Codeforces API...")
     url = "https://codeforces.com/api/problemset.problems"
@@ -70,7 +73,9 @@ def get_all_problems():
     data = response.json()
     if data["status"] != "OK":
         raise Exception("Failed to fetch problems")
-    return data["result"]["problems"]
+    problems = data["result"]["problems"]
+    return problems
+    #return [p for p in problems if "*special" not in p.get("tags", [])]
 
 
 def _text_or_none(el):
@@ -250,4 +255,4 @@ def collect(max_problems=100000, delay=1.0):
 
 
 if __name__ == "__main__":
-    collect(delay=1)
+    collect(delay=0.1)
