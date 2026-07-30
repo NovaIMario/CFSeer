@@ -20,7 +20,7 @@ A companion service that scrapes Codeforces problem data, predicts problem tags,
 
 - **Backend:** Python, FastAPI
 - **ML:** scikit-learn (TF-IDF vectorizer, logistic regression, linear regression)
-- **Database:** PostgreSQL
+- **Database:** PostgreSQL (hosted on Supabase)
 - **Containerization:** Docker
 - **Deployment:** Render (with model persistence via pickle)
 
